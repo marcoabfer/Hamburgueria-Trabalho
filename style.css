@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap'); /*Importar a fonte Roboto do google para o projeto*/
+
+/* Resetar nosso projeto, ou seja, deixar tudo zerado. O asterístico indica que estamos pegando todos os elementos do nosso projeto*/
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none; /*Deixando nosso estilo de lista sem nada, sem as bolinhas que o próprio navegador coloca*/
+    border: none;
+    text-decoration: none; /*Tirar o sublinhado dos itens da lista*/
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    width: 100vw; /*Liberando o html para ocupar toda tela*/
+    height: 100vh;
+    font-size: 62.5%; 
+    overflow-x: hidden; /*Tirando a barra de rolagem horizontal, deixando somente a vertical*/
+    background-color: #403838;
+}
+
+/*Menu*/
+.content {
+    width: 100vw;
+    height: 70px;
+    display: flex; /*Colocar os itens um do lado do outro*/
+    justify-content: space-around; /*Espaçamento entre os itens*/
+    align-items: center; /*Centralizar os itens*/
+    background-color: rgb(21, 20, 20);
+    position: fixed; /*Faz com que o menu permaneça na tela independente onde estiver a barra de rolagem*/
+    /*padding-left: 30rem; /*Rem foi utilizado para diminuir automaticamente o tamanho, quando a fonte também for diminuída*/
+    /*O elemento a cima é para caso eu queira deixar o menu todo mais para direita*/
+}
+
+
+.logo {
+    width: 70px;
+    height: auto;
+    cursor: pointer; /*Para mudar o formato do cursor quando passar por cima*/
+    display: flex;
+    align-items: center;
+}
+
+.logo h3 {
+    color: white; /*Alterar cor do H3 (HamburgueriaADS), para que não fique camuflado no background do menu*/
+    font-size: 1.6rem;
+}
+
+.logo img {
+    width: 100%; /*Estamos fazendo com que a imagem da logo ocupe 100% do tamanho do menu*/
+    height: 100%;
+}
+
+.content .list-menu { /*Barra de navegação do site*/
+    width: 600px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; /*Dar o espaçamento entre os itens*/
+
+}
+
+.content .list-menu li a { /*Mexer especificamente em cada um dos itens do menu*/
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: white;
+    font-size: 1.8rem;
+    text-transform: uppercase; /*Transformar tudo em letras maiúsculas*/
+    font-weight: 500; /*Grossura da fonte*/
+    transition: all 200ms ease-in; /*Fazer o efeito de transição ao passar o cursor entre os itens*/
+}
+
+.content .list-menu li a:hover { /*Fazer com que ao passar o cursor nos itens apareça uma "caixa" e outra cor, mostrando onde o cursor está*/
+    background-color: #72727233;
+    border-bottom: 4px solid rgb(226, 121, 16);
+    color:rgb(226, 121, 16);
+}
+
+
+/*Página principal*/
+.first-section {
+    height: 100vh;
+    background-image:linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)) ,url(./img/imagem_fundo_2.jpeg); /*Colocar a imagem no fundo do site, o linear-gradient serve para a imagem ficar com essa "sombra sobre ela, para que não fique muito clara, assim podendo destacar os textos da página inicial"*/
+    background-position: center center; /*Estes comandos servem para alinharmos a imagem no fundo da tela*/
+    background-size: cover; /*Para cobrir toda a tela*/
+    background-repeat: no-repeat; /*Não repetir a imagem no decorrer da tela*/
+    width: 100vw;
+    display: flex;
+    flex-direction: column; /*Deixar os itens da página principal um em cima do outro*/
+    justify-content: center; 
+    align-items: center;
+}
+
+.first-section .conteudo_principal {
+    display: flex; /*Um item do lado do outro*/
+    flex-direction: column; /*Deixar os itens que estavam um do lado do outro como uma coluna, ou seja, em cima do outro*/
+    align-items: center;
+    justify-content: center;
+}
+
+.first-section h1 {
+    color: rgb(226, 121, 16);
+    font-size: 6rem; /*Tamanho da fonte*/
+    text-transform: uppercase; /*Deixar em letras maiúsculas*/
+    margin-bottom: 1rem; /*Distanciamento do sub-titulo*/
+}
+
+
+.first-section h2 {
+    color: rgb(177, 177, 177);
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.btn button {
+    width: 230px;
+    height: 60px;
+    cursor: pointer; /*Mudar o cursor ao passar sobre os botões*/
+    text-transform: uppercase;
+    background-color: rgb(226, 121, 16);
+    border-radius: 10px; /*Serve para deixar as extremidades do botão redondas*/
+    color: black;
+    font-weight: 700;
+    margin-top: 5rem;
+    transition: all 400ms ease-in; /*Fazer a transição de um elemento para outro*/
+}
+
+.btn button:hover { /*Ao passar o cursor em cima do elemento, ele muda a forma*/
+    border: 1px solid rgb(226, 121, 16);
+    background-color: transparent;
+    color: rgb(226, 121, 16);
+}
+
+.btn { /*Mexendo na caixa dos botões em si, para dar uma distanciada entre eles*/
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CARDÁPIO */
+.cardapio { /*Estilizar a classe cardápio em si, ou seja a página do cardápio toda*/
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(12, 12, 12, 0.7); /*Os três primeiros valores são referente a cor, já o último é para opacidade, deixando mais claro ou escuro*/
+}
+
+.cardapio h2 {
+    margin-top: 10px;
+    font-size: 5rem;
+    color: rgb(177, 177, 177);
+    text-transform: uppercase;
+}
+
+.itens-cardapio {
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 550px)) ; /*Definindo o tamanho de cada uma das colunas, dizendo que vai repetir as colunas de forma que fiquem configuradas em tela, onde o tamanho minímo dos cards é 250px e o máximo 550 */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /*Distância de cada elemento*/
+}
+
+.itens-cardapio .info {
+    background-color: rgb(221, 221, 221);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.itens-cardapio h3{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-decoration: underline; /*Sublinhar o título de cada um dos lanches*/
+}
+
+.itens-cardapio p {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    display: grid; /*Serve para quebrar a tela, para que o site fique proporcionalmente correto independente do tamanho de tela em que for aberto*/
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 250px 250px;
+    margin-left: 6rem;
+}
+
+.itens-cardapio img {
+    width: 70%;
+    height: 200px;
+    padding-left: 90px; /*Desencostar a imagem do quadrado, centralizando*/
+}
+
+.itens-cardapio div { /*Mexendo na div dos itens do cardapio*/
+    background-color: #403838;
+    box-shadow: 0px 0px 4px 1px; /*As bordas em volta das caixas de cada item*/
+}
+
+.itens-cardapio .info .pedir { /* Mexendo no botão de pedir do cardápio */
+    width: 200px;
+    height: 35px;
+    margin-top: 0.5rem;
+    background-color: rgb(226, 121, 16);
+    border-radius: 5px; /*Arredondar a borda do botão*/
+    text-transform: uppercase;
+    cursor: pointer; /*Trocar a forma do cursor ao passar em cima do botão, virar a mãozinha*/
+    color: black;
+    transition: all 200ms ease-in; /*Fazer a transição ao passar o cursor por cima do botão, mudando sua cor*/
+
+}
+
+.itens-cardapio .info .pedir:hover { /*Mexer na transição do botão, mudar sua cor, fundo, etc*/
+    background-color: #403838;
+    color: white;
+}
+
+/*Tabela Pedidos*/
+
+.pedidos{
+    background-color: #111111;
+    text-align: center;
+    justify-content: center;
+}
+
+.div-pedidos {
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 36px;
+}
+
+.titulo-pedido {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(177, 177, 177);
+    margin-bottom: 30px;
+}
+
+.div-tabela {
+    padding: 20px;
+}
+
+.caixa-pedidos {
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid #c0c0c0;
+    outline: 0;
+}
+
+.pedidos-ln {
+    font-size: 20px;
+    margin-left: 20px;
+    color: rgb(177, 177, 177);
+}
+
+.tabela-pedidos {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.pedidos-botao {
+    color: black;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 5px;
+    font-size: 22px;
+    border: 2px solid #4b4b4b;
+    border-radius: 10px; /*Serve para deixar as extremidades do botão redondas*/
+    cursor: pointer; /*Mudar o cursor ao passar sobre os botões*/
+}
+
+.pedidos-botao:hover {
+    background-color: #111111;
+    color:white;
+}
+
+.tabela-pedidos, th, td {
+    font-size: 22px;
+    padding-right: 10px;
+    text-align: left;
+
+}
+
+.tabela-pedidos th { /*Modificando o cabeçalho da tabela*/
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(177, 177, 177);
+}
+
+.tabela-pedidos td { /*Aqui estamos nos referindo a todos os dados que entrar na tabel, mantendo eles alinhados e com a cor branca*/
+    text-align: center;
+    justify-content: center;
+    color: white;
+    padding-bottom: 15px;
+}
+
+/*Contatos*/
+.contatos {
+    width: 100%;
+    background-color: rgb(9, 9, 9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    padding-bottom: 4rem;
+}
+
+.contatos h3 {
+    font-size: 6rem;
+    margin-bottom: 3rem;
+}
+
+.contatos-secao {
+    width: 650px;
+    display: flex;
+    justify-content: space-between; /*Dar o espaçamento entre os itens*/
+}
+
+.contatos-secao i{ /*Distanciar os ícones do texto*/
+    margin-right: 1rem;
+}
+
+.contatos-secao div {
+    cursor: pointer;
+}
+
+.contatos-secao div:hover {
+    color: rgb(226, 121, 16);
+}
+
+/*Rodapé*/
+footer {
+    height: 25px;
+    background-color: black;
+    color: white;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Fazendo a responsividade*/
+@media(max-width: 1200px) { /*Aqui passamos em qual tamanho a tela irá precisar estar para fazer as alterações desejadas*/
+    .content{ /*Mexer no cabeçário, pois está ficando muito a direita os itens, por isso colocamos como coluna para a imagem e o nome ficarem em cima, e os itens embaixo*/
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 12%;
+        padding-left: 0px;
+    }
+}
+
+@media(max-width: 992px) { /*Alterar o tamanho da letra quando a tela estiver desse tamanho, pois está muito grande em relação a tela*/
+    html {
+        font-size: 50%; /*Mexendo nesse elemento, como utilizamos o rem para todos os outros, diminuimos todos os tamanhos de fonte e uma vez*/
+    }
+}
+
+@media(max-width: 768px){
+    html {
+        font-size: 45%; /*Mexendo nesse elemento, como utilizamos o rem para todos os outros, diminuimos todos os tamanhos de fonte e uma vez*/
+    }
+
+    .content { /*Alinhar o header, e criar o menu-toggle*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 40px;
+    }
+
+    .content .list-menu {
+        display: none; /*Tirar a lista de menu*/
+    }
+
+    .one, .two, .three { /*Criar cada parte do menu toggle quando a tela estiver pequena*/
+        width: 80%;
+        height: 2px;
+        background-color: white;
+        margin: 6px auto;
+        transition-duration: 0.5s;
+    }
+
+    .menu-toggle { /*Criar o menu toggle em si*/
+        width: 30px;
+        height: 30px;
+    }
+
+    .content.on{ /*Acessando aqui a nova classe criada no JS, ou seja, quando o menu-toggle estiver on(aparecendo)*/
+        position: fixed; /*Fixar a tela, mesmo conseguindo rolar a parte de trás dela*/
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vw; /*Colocando para o menu-toggle ocupar a tela toda quando clicado*/
+        background-color: rgba(30, 31, 30, 0.8); /*Está cor foi escolhida para conseguirmos ver a parte de trás mesmo com o menu-toggle on*/
+        z-index: 10; /*Estamos certificando que o menu ficará na frente de qualquer outro elemento que estará na página*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content.on .logo { /*Criando uma modificação para a logo, quando o content on estiver ativado(menu aberto)*/
+        display: none; /*Tirar a logo*/
+    }
+
+    .content.on .menu-toggle { /*Modificando os três risquinhos para ficar na parte superior direita da tela, e não centralizado*/
+        position: absolute;
+        right: 40px;
+        top: 20px;
+    }
+
+    .content.on .list-menu { /*Fazer com que os itens do menu apareçam*/
+        display: block; /*Aparecer em tela novamente*/
+    }
+
+    .content.on .list-menu li { /*Centralizar cada uma das li(os itens do menu, ex: Contatos, Cardápio)*/
+        display: flex;
+        justify-content: center;
+    }
+
+    .content.on .list-menu li a { /*Mexer no link de cada uma das li, aumentar o tamanho de cada uma das palavras e ícones*/
+        font-size: 2rem;
+    }
+
+    .itens-cardapio {
+        grid-template-columns: repeat(2, minmax(50px, 350px)); /*Colocar um item do lado do outro no cardápio*/
+    }
+
+    .itens-cardapio .info p { /*Aqui estou fazendo com que as descrições de cada lanche fiquem alinhadas ao colocar um item do lado do outro*/
+        margin-left: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 50px;
+    }
+
+    .contatos-secao { /*Para não quebrar quando a tela estiver nessa resolução*/
+        display: block;
+        text-align: center;
+    }
+
+    .contatos-secao div {
+        margin: 1rem; /*Espeçamento entre os itens contatos*/
+    }
+}   
+
+@media(max-width: 600px){
+    .conteudo_principal h1 { /*Alinhar o texto principal, da página principal e diminuir o tamanho*/
+        width: 500px;
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .conteudo_principal h2 { /*Diminuir o tamanho do sub-título*/
+        font-size: 2rem;
+    }
+
+    .itens-cardapio {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 350px)); /*Deixar os itens do cardápio cada um em uma linha só */
+    }
+
+    .contatos-secao { /*A div do contatos estava ocupando muito espaço, quebrando a tela também, por isso diminuímos*/
+        width: 300px;
+    }
+}
+
+@media(max-width: 500px) {
+    .btn { /*Deixar os dois botões um em cima do outro*/
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+    }
+
+    .btn button { /*Mexer em cada um dos botões especificamente, diminuindo o tamanho das letras*/
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .conteudo_principal h1 { /*Alinhar o texto principal, da página principal e diminuir o tamanho*/
+        width: 350px;
+        font-size: 3rem;
+        text-align: center;
+    }
+}

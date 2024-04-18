@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!--LINKAR PROJETO COM OS ICONES DO BOOTSTRAP-->
+    <title>HamburgueriaADS</title>
+</head>
+<body>
+    <header class="content"> <!--CRIAR O MENU DO SITE, A PARTE DE CIMA. OS ÍCONES FORAM TIRADOS DO SITE BOOTSTRAP-->
+        <div class="logo">
+            <img src="./img/imagem_logo.png" alt="Logo">
+            <h3>HamburgueriaADS</h3>
+        </div>
+        <nav>
+            <ul class="list-menu"> 
+                <li><a href="#paginaInicial">Página Inicial</a></li> <!--Os href serve para nós referirmos a uma pagina do nosso site, para que quando clicarmos na Li desejada, o site possa ir no id que referenciamos, movendo a tela para parte do código onde está o id-->
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+                <li><a href="#"><i class="bi bi-cart3"></i></a></li>
+                <li><a href="#contatos"><i class="bi bi-facebook"></i></a></li>
+                <li><a href="#contatos"><i class="bi bi-instagram"></i></a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-toggle"><!--Aqui vamos criar o menu-toggle, que é para quando a proporção da tela estiver menor, criar os três pontinhos do canto superior direito da tela, contendo ali os elementos do menu-->
+
+            <div class="menu-toggle"> <!--Criar os três risquinhos do menu toggle-->
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+
+        </div> 
+    </header>
+
+    <section class="first-section" id="paginaInicial"> <!--CRIAR PARTE PRINCIPAL DO SITE, OU SEJA, A TELA INICIAL-->
+        <div class="conteudo_principal">
+            <h1>Melhores Lanches Unicesumar!!!!</h1>
+            <h2>Sem miséria, muito recheio!</h2>
+            <div class="btn">
+                <button class="pedir">PEÇA O SEU!</button>
+                <button class="montar">MONTE O SEU!</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cardapio" id="cardapio">
+        <h2>Cardápio</h2>
+        <div class="itens-cardapio">
+
+            <div>
+                <img src="./img/cardapio_1" alt="Lanche 1">
+                <div class="info">
+                    <h3>Salad Burger</h3>
+                    <p>Carne bovina, alface, tomate, cebola e molho especial. Por apenas R$20</p>
+                    <button class="pedir">Pedir agora</button>
+                </div>
+            </div>
+
+            <div>
+                <img src="./img/cardapio_2.webp" alt="Lanche 2">
+                <div class="info">
+                    <h3>Bacon Burger</h3>
+                    <p>Três carnes bovina, queijo cheddar, bacon, cebola caramelizada e molho especial. Por apenas R$29</p>
+                    <button class="pedir">Pedir agora</button>
+                </div>
+            </div>
+
+            <div>
+                <img src="./img/cardapio_3.png" alt="Lanche 3">
+                <div class="info">
+                    <h3>Classic Burger</h3>
+                    <p>Duas carnes bovina, alface, três fatias de pão, queijo mussarela e molho especial. Por apenas R$25</p>
+                    <button class="pedir">Pedir agora</button>
+                </div>
+            </div>
+
+            <div>
+                <img src="./img/cardapio_4.png" alt="Lanche 4">
+                <div class="info">
+                    <h3>Chicken Duplo</h3>
+                    <p>Duas carnes de frango, alface, queijo muçarela, bacon e molho especial. Por apenas R$28</p>
+                    <button class="pedir">Pedir agora</button>
+                </div>
+            </div>
+
+            <div>
+                <img src="./img/cardapio_5" alt="Lanche 5">
+                <div class="info">
+                    <h3>Classic Chicken</h3>
+                    <p>Carne de frango, alface, tomate, cebola e molho especial. Por apenas R$20</p>
+                    <button class="pedir">Pedir agora</button>
+                </div>
+            </div>
+
+            <div>
+                <img src="./img/cardapio_6.webp" alt="Lanche 6">
+                <div class="info">
+                    <h3>Veggie Burger</h3>
+                    <p>Burger vege, alface, tomate, cebola e molho especial. Por apenas R$20</p>
+                    <button class="pedir">Pedir agora</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="pedidos">
+    
+        <div class="div-pedidos">
+            <h3 class="titulo-pedido">Realizar Pedidos</h3>
+
+            <label for="Lanche" class="pedidos-ln"> Lanche: </label>
+            <input type="text" id="Lanche" name="Lanche" class="caixa-pedidos">
+    
+            <label for="nome" class="pedidos-ln"> Nome: </label>
+            <input type="text" id="nome" name="nome" class="caixa-pedidos">
+    
+            <button type="button" class="pedidos-botao" onclick="salvar()">Adicionar</button>
+        </div>
+    
+        <div class="div-tabela">
+            <table class="tabela-pedidos"> 
+                <thead> <!--Cabeçalho da tabela, o conteúdo dentro desta tag define as células do cabeçalho da tabela.-->
+                    <tr> <!--Esta tag define uma linha na tabela.-->
+                        <th>Lanches: </th>
+                        <th>Nomes: </th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"> <!--Esta é a seção do corpo da tabela. O conteúdo dentro desta tag será preenchido dinamicamente com os dados da tabela.-->
+    
+                </tbody>
+                <tfoot id="table-footer"> <!--Rodapé da tabela--> 
+                
+    
+                </tfoot>
+            </table>
+        </div>
+    
+    </section>
+
+    <section class="contatos" id="contatos">
+        <h3>Contatos</h3>
+        <div class="contatos-secao">
+            <div>
+                <i class="bi-instagram"></i>
+                <span> HambuergueriaADS </span>    
+            </div>
+
+            <div>
+                <i class="bi-facebook"></i>
+                <span> HambuergueriaADS </span>    
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h4>Trabalho Front-End Plataforma de Hamburgueria</h4>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
